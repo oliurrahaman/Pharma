@@ -60,7 +60,114 @@
 
 <body onload="max_id_increment()">
     <div class="d-flex" id="wrapper">
-        
+        <!-- Sidebar start -->
+        <div style="background-color:#121642" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+              <a class="navbar-brand" href="#">
+                 <img src="image/pharma_logo.jpg" alt=" " class="rounded-circle ms-end" width="90" height="80">
+              </a>
+              <span class="ms-end text-light">Pharma</span>
+            </div>
+            
+            <div class="list-group list-group-flush my-3">
+                <a href="dashboard.php" class="text-light list-group-item list-group-item-action bg-transparent second-text active"><i
+                        class="fa-solid fa-gauge me-2 text-light"></i>Dashboard</a>
+                                            
+                <div>
+                    <a
+                        href="#medicineSubMenu"
+                        class="text-light list-group-item list-group-item-action bg-transparent second-text fw-bold"
+                        data-bs-toggle="collapse">
+                        <i class="fa-solid fa-capsules me-1 text-light"></i> Medicine
+                    </a>
+
+                    <div class="collapse ps-2" id="medicineSubMenu">
+                        <a href="add_medicine.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Add Medicine
+                        </a>
+
+                        <a href="manage_medicine.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Manage Medicine
+                        </a>
+
+                        <a href="add_medicine_stock.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                           Purchase Medicine 
+                        </a>
+
+                        <a href="manage_medicine_stock.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                          Manage Medicine Stock
+                        </a>
+                    </div>
+                </div>
+                        
+                <div class="menu-item-wrap">
+                    <a href="#invoiceSubMenu" class="text-light list-group-item list-group-item-action bg-transparent second-text fw-bold" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-file-invoice me-2 text-light"></i> Invoice
+                    </a>
+
+                    <div class="collapse ps-3" id="invoiceSubMenu">
+                        <a href="invoice_form.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            New Invoice
+                        </a>
+
+                        <a href="manage_invoice.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Manage invoice
+                        </a>
+                    </div>
+                </div>
+
+                <div class="menu-item-wrap">
+                    <a href="#reportSubMenu" class="text-light list-group-item list-group-item-action bg-transparent second-text fw-bold " data-bs-toggle="collapse">
+                        <i class="fas fa-paperclip me-2 text-light"></i> Reports
+                    </a>
+
+                    <div class="collapse ps-3" id="reportSubMenu">
+                        <a href="sales_report.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Sales Report
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#customerSubmenu" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light" data-bs-toggle="collapse">
+                        <i class="fa-solid fa-person-military-pointing me-2 text-light"></i>Customer
+                    </a>
+
+                    <div class="collapse ps-3" id="customerSubmenu">
+                        <a href="customer_add.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                           Add Customer
+                        </a>
+
+                        <a href="customer_manage.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Manage Customer
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    
+                     <a href="#SuplierSubmenu" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light" data-bs-toggle="collapse"><i
+                        class="fa-solid fa-truck-field me-2 text-light"></i>Supplier</a>
+
+                    <div class="collapse ps-3" id="SuplierSubmenu">
+                        <a href="add_supplier.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Add Supplier
+                        </a>
+
+                        <a href="manage_supplier.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-light">
+                            Manage Supplier
+                        </a>
+                    </div>
+
+                </div>
+                        
+                
+                <a href="#" class="text-light list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fa-solid fa-magnifying-glass me-2 text-light"></i>Search</a>
+                
+            </div>
+        </div>
+        <!-- sidebar-wrapper -->
         <div class="container bg-light">
                 <div class="row">
                 <div id="page-content-wrapper">
@@ -117,7 +224,7 @@
 						<!--	<label>Invoice No</label>-->
 						<!--	<input type='text' name='$fnl'  required class='form-control' disable>-->
 						<!--</div>-->
-						<!-- <div class='form-group me-5'>
+						<div class='form-group me-5'>
 						    
 						    
                                     
@@ -136,7 +243,7 @@
                                     <option>Dealer</option>
 							</select>
 						</div>
-					</div> -->
+					</div>
 					<div class='col-md-8'>
 						<h5 class='text-success'>Customer Details</h5>
 						<div class='form-group'>
@@ -165,7 +272,7 @@
 						</div>
 					</div>
 				</div>
-                <!-- <h5 class='text-success'>Medicine Details</h5>
+                <h5 class='text-success'>Medicine Details</h5>
 				<div class="row invoice_item" id="add_field">
 						
 									<div class="col-2">
@@ -250,13 +357,13 @@
 						<input type='submit' name='submit' value='Save Invoice' class='btn btn-success float-end'>
 						<button class="btn btn-success"><a href="manage_invoice.php" class="text-light">Show Invoice</a></button>
 				</div>
-			</form> -->
+			</form>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
     
     function medPrice(id){
         var medicine=$('#medicine_name'+id).val();
@@ -339,7 +446,7 @@
         })
     })
     
-   </script> -->
+   </script>
    
    
    
